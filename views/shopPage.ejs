@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>theAudibleNetwork - Discover</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Audio Sharing Academy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Dashboard</a></li>
+			<li class="nav-item"><a class="nav-link" aria-current="page" href="/bookUpload">Carica i tuoi libri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/myLibrary">La tua libreria</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/orderHistory">Storico ordini</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+				<li><a class="dropdown-item" href="/accountInformations">Aggiorna Informazioni</a></li>
+                                <li><a class="dropdown-item" href="/">Log-out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi bi-chat-left-fill"></i>
+                            Contattaci
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-gradient-primary-to-secondary py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Recensisci i libri in evidenza!</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Otterrai il doppio del bonus base.</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+
+	<div class="container px-4 px-lg-5 mt-5">
+                <div id="productSection" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
+                  	    <% for(var i=0; i<bookcount; i++) { %>
+           		   <div class="card h-100"> <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">BADGE</div><img class="card-img-top" src="<%=orderedbooklist[i].book_imgLink %>" alt="..." /><div class="card-body p-4"><div class="text-center"><h5 class="fw-bolder"><%=orderedbooklist[i].book_title %></h5><h6> <%=orderedbooklist[i].book_subtitle %></h6></div></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product?bookID=<%=orderedbooklist[i].id %>">Ottieni codice</a></div></div></div>
+    	    		    <% } %> 
+                </div>
+        </div>
+
+        </section>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">Audio Sharing Academy &copy; 2021 </div>
+                    <a href="#!">Privacy Policy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="#!">Termini e Condizioni</a>
+                    <span class="mx-1">&middot;</span>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </body>
+</html>
